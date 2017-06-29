@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "node server.js",
+    "start": "http-server dist/ > http.log 2>&1 &",
     "preinstall": "npm install http-server -g",
     "postinstall": "http-server dist/ > http.log 2>&1 &",
     "deploy": "git push origin master && git push heroku master"
