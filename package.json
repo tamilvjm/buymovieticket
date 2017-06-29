@@ -15,6 +15,7 @@
   },
   "private": true,
   "dependencies": {
+      "@angular/compiler-cli": "^4.0.0",
     "@angular/cli": "1.0.2",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -35,7 +36,6 @@
     "npm": "3.10.9"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
