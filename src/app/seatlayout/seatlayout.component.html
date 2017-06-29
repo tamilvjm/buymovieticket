@@ -1,0 +1,19 @@
+<div class="container">
+  <div style="position: static; height: 330px; width: 1400px;">
+    <!--<div class="col-lg-1  col-centered">-->
+    <div *ngFor="let row of settings.rows; index as i">
+      <div class="btn-group" role="group" *ngFor="let col of settings.cols; index as j">
+        <button type="button" [ngClass]="getClassName(i,j)" (click)="seatClick(getSeatNo(i,j), $event)" class="btn btn-default">
+      <!--<a title="{{getSeatNo(i,j)}}">{{getSeatNo(i,j)}}</a>-->
+    </button>
+      </div>
+    </div>
+    <!--</div>-->
+  </div>
+  <div class="row">
+
+    <button class="col-md-4" type="button" class="btn btn-primary" (click)="bookTicket()">Book ticket</button>
+    <span class="col-md-4"></span>
+  </div>
+</div>
+<!--[style.top.px]="getTop(i)" [style.left.px]="getLeft(j)"-->
