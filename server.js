@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 // Run the app by serving the static files
 // in the dist directory
 app.get('/*', function(req, res) {
