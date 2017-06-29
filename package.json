@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node server.js",
-    "postinstall": "ng serve",
+    "preinstall": "npm install http-server -g"
+    "postinstall": "http-server dist/",
     "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
