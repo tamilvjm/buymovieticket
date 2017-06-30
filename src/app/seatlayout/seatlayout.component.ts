@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class SeatlayoutComponent implements OnInit {
   setNewClass: any;
-  private settings: any;
+  settings: any;
   private rowLength: number;
   private reservedSeat: any[] = [];
   private selectingSeat: any[] = [];
@@ -25,12 +25,9 @@ export class SeatlayoutComponent implements OnInit {
       selectedSeatCss: 'selectedSeat',
       selectingSeatCss: 'selectingSeat'
     };
-    console.log("Getting settings", localStorage.getItem("settings"));
     let ls_settings = localStorage.getItem("settings");
-    console.log(ls_settings);
 
     if (ls_settings == null || ls_settings == "undefined") {
-      console.log("COMing INSIDE");
       localStorage.setItem("settings", JSON.stringify(this.settings));
     } else {
       if (typeof ls_settings === 'string') {
@@ -76,13 +73,12 @@ export class SeatlayoutComponent implements OnInit {
       event.target.className += ' selectingSeat';
       this.selectingSeat.push(seatno);
     } else {
-      event.target.className.replace('selectingSeat', '');
+       event.target.className = event.target.className.replace(' selectingSeat', '');
       let index = this.selectingSeat.indexOf(seatno);
       if (index > -1) {
         this.selectingSeat.splice(index, 1);
       }
     }
-    console.log(event.target.className, seatno);
   }
 
   getTop(i) {
